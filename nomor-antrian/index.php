@@ -65,50 +65,62 @@
               <div class="border border-success rounded-2 py-2 px-2 mb-5">
                 <div class="col-8 mx-auto mb-3">
                   <h3 class="pt-4">PILIH LAYANAN</h3>
-                  <!-- <select id="loket" class="form-select fs-5" aria-label="Default select example" required>
-                    <option value="Pelayanan">Pelayanan Publik</option>
-                    <option value="Informasi dan Pengaduan">Informasi dan Pengaduan</option>
-                  </select> -->
                 </div>
-                <div class="col-7 mx-auto">
+                <div class="row p-3 justify-content-between">
+                  <div class="col-5">
+                    <input type="radio" class="btn-check" name="jenis" id="primary-outlined" autocomplete="off"
+                      value="Pelayanan Publik">
+                    <label class="btn btn-outline-primary" for="primary-outlined">Pelayanan Publik</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" class="btn-check" name="jenis" id="danger-outlined" autocomplete="off"
+                      value="Informasi dan Pengaduan">
+                    <label class="btn btn-outline-danger" for="danger-outlined">Informasi dan Pengaduan</label>
+                  </div>
+                </div>
+                <!-- Disabilitas -->
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal">
+                      Penyandang Disabilitas
+                      ?
+                    </button>
+                    <!-- <input type="checkbox" class="btn-check" id="btn-check-2-warning" autocomplete="off">
+                    <label class="btn btn-outline-warning" for="btn-check-2-warning">asd</label><br> -->
+                  </div>
+                </div>
+                <!-- End disabilitas -->
+
+                <div class="col-8 mx-auto">
                   <div class="mb-3 mt-5">
                     <label for="nama" class="form-label fw-bold">Nama Lengkap :</label>
                     <input type="text" class="form-control" id="nama" aria-describedby="nama"
                       placeholder="Isi nama lengkap sesuai KTP" required autocomplete="off">
                   </div>
                 </div>
-                <div class="row p-3">
-                  <div class="col-5">
-                    <input type="radio" class="btn-check" name="jenis" id="primary-outlined" autocomplete="off"
-                      value="Pelayanan Publik">
-                    <label class="btn btn-outline-primary" for="primary-outlined">Pelayanan Publik</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="radio" class="btn-check" name="jenis" id="danger-outlined" autocomplete="off"
-                      value="Informasi dan Pengaduan">
-                    <label class="btn btn-outline-danger" for="danger-outlined">Informasi dan Pengaduan</label>
-                  </div>
-                </div>
+
               </div>
-              <div class="alert alert-success alert-dismissible fs-5" id="success" style="display:none;">
-              </div>
-              <div class="alert alert-danger alert-dismissible fs-5" id="danger" style="display:none;">
-              </div>
-              <div class="border border-success rounded-2 py-2 mb-5">
-                <h3 class="pt-4">JUMLAH ANTRIAN</h3>
-                <!-- menampilkan informasi jumlah antrian -->
-                <h1 id="antrian" class="display-1 text-success text-center lh-1 pb-2 fw-bold"></h1>
-                <br>
-              </div>
-              <!-- button pengambilan nomor antrian -->
-              <a id="insert" href="javascript:void(0)"
-                class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
-                <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor Antrian
-              </a>
             </div>
+            <div class="alert alert-success alert-dismissible fs-5" id="success" style="display:none;">
+            </div>
+            <div class="alert alert-danger alert-dismissible fs-5" id="danger" style="display:none;">
+            </div>
+            <div class="border border-success rounded-2 mb-5 mx-4">
+              <h3 class="pt-4">JUMLAH ANTRIAN</h3>
+              <!-- menampilkan informasi jumlah antrian -->
+              <h1 id="antrian" class="display-1 text-success text-center lh-1 pb-2 fw-bold"></h1>
+              <br>
+            </div>
+            <!-- button pengambilan nomor antrian -->
+            <a id="insert" href="javascript:void(0)"
+              class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-3 mx-4">
+              <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor Antrian
+            </a>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </main>
 
@@ -117,11 +129,129 @@
     <div class="container">
       <!-- copyright -->
       <div class="copyright text-center mb-2 mb-md-0">
-        &copy; 2022 - <a href="https://btamciptakarya.pu.go.id/" target="_blank" class="text-danger text-decoration-none">Balai
+        &copy; 2024 - <a href="https://btamciptakarya.pu.go.id/" target="_blank"
+          class="text-danger text-decoration-none">Balai
           Teknologi Air Minum</a>.
       </div>
     </div>
   </footer>
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Formulir Identifikasi Kelompok Rentan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold text-center">Silahkan isi formulir berikut untuk mengidentifikasi kelompok rentan
+            menggunakan
+            Washington
+            Group Short Set (<span class="fst-italic">WG-SS</span>). Data yang Anda berikan akan digunakan untuk
+            mastikan layanan yang lebih inklusif dan sesuai kebutuhan</p>
+
+          <label for="disabledTextInput" class="form-label">1. Apakah Anda mengalami kesulitan melihat, meskipun
+            memakai kacamata?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss1" id="wgss1-1" value="Iya">
+            <label class="form-check-label" for="wgss1-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss1" id="wgss1-2" value="Tidak">
+            <label class="form-check-label" for="wgss1-2">
+              Tidak
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss1" id="wgss1-2" value="Tidak">
+            <label class="form-check-label" for="wgss1-2">
+              Tidak
+            </label>
+          </div>
+          <label for="disabledTextInput" class="form-label mt-3">2. Apakah Anda mengalami kesulitan mendengar, meskipun
+            menggunakan alat bantu dengar?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss2" id="wgss2-1" value="Iya">
+            <label class="form-check-label" for="wgss2-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss2" id="wgss2-2" value="Tidak">
+            <label class="form-check-label" for="wgss2-2">
+              Tidak
+            </label>
+          </div>
+          <label for="disabledTextInput" class="form-label mt-3">3. Apakah Anda mengalami kesulitan berjalan atau
+            menaiki tangga?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss3" id="wgss3-1" value="Iya">
+            <label class="form-check-label" for="wgss3-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss3" id="wgss3-2" value="Tidak">
+            <label class="form-check-label" for="wgss3-2">
+              Tidak
+            </label>
+          </div>
+          <label for="disabledTextInput" class="form-label mt-3">4. Apakah Anda mengalami kesulitan dengan perawatan
+            diri seperti membersihkan seluruh tubuh atau berpakaian?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss4" id="wgss4-1" value="Iya">
+            <label class="form-check-label" for="wgss4-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss4" id="wgss4-2" value="Tidak">
+            <label class="form-check-label" for="wgss4-2">
+              Tidak
+            </label>
+          </div>
+          <label for="disabledTextInput" class="form-label mt-3">5. Apakah Anda mengalami kesulitan mengingat atau
+            berkonsentrasi?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss5" id="wgss5-1" value="Iya">
+            <label class="form-check-label" for="wgss5-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss5" id="wgss5-2" value="Tidak">
+            <label class="form-check-label" for="wgss5-2">
+              Tidak
+            </label>
+          </div>
+          <label for="disabledTextInput" class="form-label mt-3">6. Apakah Anda mengalami kesulitan berkomunikasi,
+            misalnya memahami atau dimengerti?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="wgss6" id="wgss6-1" value="Iya">
+            <label class="form-check-label" for="wgss6-1">
+              Iya
+            </label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="radio" name="wgss6" id="wgss6-2" value="Tidak">
+            <label class="form-check-label" for="wgss6-2">
+              Tidak
+            </label>
+          </div>
+          <!-- end body modal -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- jQuery Core -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -158,12 +288,25 @@
       $('#insert').on('click', function () {
         var jenislayanan = $('input[name="jenis"]:checked').val();
         var nama = $("#nama").val();
+        var wgss1 = document.querySelector('input[name="wgss1"]:checked').value;
+        var wgss2 = document.querySelector('input[name="wgss2"]:checked').value;
+        var wgss3 = document.querySelector('input[name="wgss3"]:checked').value;
+        var wgss4 = document.querySelector('input[name="wgss4"]:checked').value;
+        var wgss5 = document.querySelector('input[name="wgss5"]:checked').value;
+        var wgss6 = document.querySelector('input[name="wgss6"]:checked').value;
+
         $.ajax({
           type: 'POST', // mengirim data dengan method POST
           url: 'insert.php',
           data: {
             jenislayanan: jenislayanan,
-            nama: nama
+            nama: nama,
+            wgss1: wgss1,
+            wgss2: wgss2,
+            wgss3: wgss3,
+            wgss4: wgss4,
+            wgss5: wgss5,
+            wgss6: wgss6
           }, // url file proses insert data
           success: function (result) { // ketika proses insert data selesai
             // jika berhasil
@@ -177,10 +320,11 @@
                 $("#success").slideUp(500);
                 window.location.href = "../reporting/report.php";
               });
-            }else{
+            } else {
               // tampil message gagal
               $("#danger").show();
-              $('#danger').html('Gagal mengambil nomor antrian, silahkan isi kembali data dengan lengkap');
+              $('#danger').html(
+                'Gagal mengambil nomor antrian, silahkan isi kembali data dengan lengkap');
               $("#danger").fadeTo(2000, 500).slideUp(500, function () {
                 $("#danger").slideUp(500);
                 // window.setTimeout(function () {

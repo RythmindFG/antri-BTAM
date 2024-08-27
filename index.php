@@ -86,7 +86,7 @@
     <div class="container-fluid">
       <!-- copyright -->
       <div class="copyright text-center mb-2 mb-md-0">
-        <a href="reporting/report.php">&copy;</a> 2022 - <a href="https://sipandubtam.id/" target="_blank" class="text-danger text-decoration-none">Balai
+        <a href="reporting/report.php">&copy;</a> 2024 - <a href="https://btamciptakarya.pu.go.id/" target="_blank" class="text-danger text-decoration-none">Balai
           Teknologi Air Minum</a>.
       </div>
     </div>

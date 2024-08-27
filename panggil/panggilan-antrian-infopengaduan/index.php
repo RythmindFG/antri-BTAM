@@ -154,7 +154,7 @@
       <hr class="my-4">
       <!-- copyright -->
       <div class="copyright text-center mb-2 mb-md-0">
-         &copy; 2022 - <a href="https://sipandubtam.id/" target="_blank" class="text-danger text-decoration-none">Balai
+         &copy; 2022 - <a href="https://btamciptakarya.pu.go.id/" target="_blank" class="text-danger text-decoration-none">Balai
           Teknologi Air Minum</a>.
       </div>
     </div>
@@ -174,7 +174,14 @@
   <!-- Responsivevoice -->
   <!-- Get API Key -> https://responsivevoice.org/ -->
   <script src="https://code.responsivevoice.org/responsivevoice.js?key=jQZ2zcdq"></script>
+<?php
+require_once "../../config/database.php";
+  $query = mysqli_query($mysqli, "SELECT * FROM `tbl_antrian` WHERE wgss1 = '' OR wgss2 = '' OR wgss3 = '' OR wgss4 = '' OR wgss5 = '' OR wgss6 = '' ")
+                                  or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
+  // ambil jumlah baris data hasil query
+  $rows = mysqli_num_rows($query);
 
+?>
   <script type="text/javascript">
     $(document).ready(function() {
       // tampilkan informasi antrian
@@ -253,6 +260,19 @@
         durasi_bell = bell.duration * 770;
 
         // mainkan suara nomor antrian
+        <?php 
+          if ($rows) {    
+        ?>
+        setTimeout(function() {
+          responsiveVoice.speak("Nomor Antrian Prioritas, " + data["no_antrian"] + ", menuju, loket Informasi dan Pengaduan, terima kasih", "Indonesian Male", {
+            rate: 0.9,
+            pitch: 1,
+            volume: 1
+          });
+        }, durasi_bell);
+        <?php
+          }else {
+        ?>
         setTimeout(function() {
           responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket Informasi dan Pengaduan, terima kasih", "Indonesian Male", {
             rate: 0.9,
@@ -260,6 +280,7 @@
             volume: 1
           });
         }, durasi_bell);
+        <?php }?>
 
         // proses update data
         $.ajax({

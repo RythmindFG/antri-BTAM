@@ -8,6 +8,12 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   //variable
   $nama = $_POST['nama'];
   $loket = $_POST['jenislayanan'];
+  $pertanyaan1 = $_POST['wgss1'];
+  $pertanyaan2 = $_POST['wgss2'];
+  $pertanyaan3 = $_POST['wgss3'];
+  $pertanyaan4 = $_POST['wgss4'];
+  $pertanyaan5 = $_POST['wgss5'];
+  $pertanyaan6 = $_POST['wgss6'];
   // ambil tanggal sekarang
 
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
@@ -35,7 +41,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   }
   
   // sql statement untuk insert data ke tabel "tbl_antrian"
-  if (!empty($nama)) {
+  if (!empty($nama) && !empty($pertanyaan1) && !empty($pertanyaan2) && !empty($pertanyaan3) && !empty($pertanyaan4) && !empty($pertanyaan5) && !empty($pertanyaan6)) {
+    $insert = mysqli_query($mysqli, "INSERT INTO tbl_antrian(tanggal, no_antrian, loket, nama, wgss1, wgss2, wgss3, wgss4, wgss5, wgss6) 
+                                   VALUES('$tanggal', '$no_antrian', '$loket', '$nama', '$pertanyaan1', '$pertanyaan2', '$pertanyaan3', '$pertanyaan4', '$pertanyaan5', '$pertanyaan6')")
+                                   or die('Ada kesalahan pada query insert : ' . mysqli_error($mysqli));
+  } if(!empty($nama)){
     $insert = mysqli_query($mysqli, "INSERT INTO tbl_antrian(tanggal, no_antrian, loket, nama) 
                                    VALUES('$tanggal', '$no_antrian', '$loket', '$nama')")
                                    or die('Ada kesalahan pada query insert : ' . mysqli_error($mysqli));
